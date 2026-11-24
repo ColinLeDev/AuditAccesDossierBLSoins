@@ -158,7 +158,7 @@
       Utilisateur: a.user, "Nombre d'accès": a.count, 'Premier accès': a.first.date, 'Dernier accès': a.last.date,
     })));
     const today = new Date().toISOString().slice(0, 10);
-    download(toCSV(agg), `traces_${choice === ALL ? 'tous' : slug(choice)}_${today}.csv`);
+    download(toCSV(agg), `${today}_SERVICE_traces${choice === ALL ? '_ALL' : ''}.csv`);
   };
 
   select.addEventListener('dblclick', doExport);
